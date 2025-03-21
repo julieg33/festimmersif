@@ -1,4 +1,5 @@
 'use client';  // Assure-toi que cette ligne est présente si tu utilises des hooks React
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
