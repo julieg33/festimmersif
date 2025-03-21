@@ -1,6 +1,5 @@
 'use client';  // Assure-toi que cette ligne est présente si tu utilises des hooks React
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
