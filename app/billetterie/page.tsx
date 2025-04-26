@@ -1,5 +1,7 @@
 'use client';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
+
 import { useState, useEffect } from "react";
 import { Instagram, Facebook, Menu, X } from "lucide-react";
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer, } from "recharts";
@@ -29,6 +31,7 @@ export default function Home() {
   }, []);
   return (
     <div className="relative min-h-screen bg-black text-white">
+       {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
         <div className="flex items-center w-full">
@@ -60,7 +63,7 @@ export default function Home() {
 
         {/* Menu Mobile */}
         {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[#0f1a1c] text-white px-6 py-4 space-y-3 shadow-md z-40">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black bg-opacity-80 text-white px-6 py-4 space-y-3 shadow-md z-40">
             <Link href="/billetterie" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Billetterie</Link>
             <Link href="/programmation" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Programmation</Link>
             <Link href="/village" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Village</Link>
@@ -71,23 +74,24 @@ export default function Home() {
         )}
       </nav>
 
-
       {/* Hero Section */}
       <div className="relative w-full pt-20 sm:pt-24">
-        <img src="/fond_immersif.jpg" alt="Programmation" className="w-full h-screen object-cover object-center" />
+        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-screen object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl text-white font-bebasNeue absolute top-[25%] text-center w-full px-4">
-            Billeterie
-          </h1>
+     
+          <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '36%' }}>
+            Billetterie
+          </motion.h1>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#192622]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#192622] to-100%"></div>
       </div>
+      {/* Fin template */}
 
       <div className="bg-[#192622] flex flex-col lg:flex-row items-center justify-between px-6 sm:px-12 py-12 gap-10">
         {/* Texte à gauche */}
         <div className="w-full lg:w-2/3 text-center lg:text-right">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Répartition des Coûts du Festival</h2>
-          <p className="text-base sm:text-lg font-quantico leading-relaxed">
+          <h2 className="text-2xl sm:text-3xl text-center font-audiowide mb-4">Répartition des Coûts du Festival</h2>
+          <p className="text-base sm:text-lg text-center font-quantico leading-relaxed">
             Pour vous offrir une expérience exceptionnelle, chaque aspect du festival, de la scène à la sécurité,
             en passant par la logistique et l'artiste, a un coût.
             Ce diagramme vous donne un aperçu transparent de la répartition des dépenses qui permettent de faire
@@ -122,7 +126,7 @@ export default function Home() {
 
 
 
-      <div className="bg-[#192622] w-full flex justify-center px-4 sm:px-8 py-10 pb-20">
+      <div className="bg-[#192622] w-full flex justify-center px-4 sm:px-8  pb-20">
         <div className="w-full max-w-5xl">
           <iframe
             id="haWidget"
@@ -139,32 +143,24 @@ export default function Home() {
 
 
       {/* Footer */}
-      <footer className="p-5 bg-[#192622] text-gray-400">
-        <div className="flex items-center justify-center space-x-4">
-          {/* Logo Facebook */}
-          <Link
-            href="https://www.facebook.com/profile.php?id=100089358905510"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook className="w-6 h-6" />
-          </Link>
+      <footer className="py-6 sm:py-8 px-6 bg-[#192622] text-gray-400">
+  <div className="flex items-center justify-center space-x-8">
+    <Link href="https://www.facebook.com/profile.php?id=100089358905510" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+      <Facebook className="w-6 h-6 sm:w-7 sm:h-7" />
+    </Link>
 
-          {/* Texte centré */}
-          <p className="text-sm text-[#6ca671] text-center font-quantico">&copy; 2025 Immersif event - Tous droits réservés.</p>
+    <div className="flex flex-col items-center space-y-2">
+      <p className="text-xs sm:text-sm text-center font-quantico text-[#6ca671]">&copy; 2025 Immersif event - Tous droits réservés.</p>
+      <Link href="/mentions-legales" className="text-xs text-center sm:text-sm font-quantico text-[#6ca671] hover:text-green-700">
+        Mentions légales & politique de confidentialité
+      </Link>
+    </div>
 
-          {/* Logo Instagram */}
-          <Link
-            href="https://www.instagram.com/immersif.event/"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram className="w-6 h-6" />
-          </Link>
-        </div>
-      </footer>
+    <Link href="https://www.instagram.com/immersif.event/" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+      <Instagram className="w-6 h-6 sm:w-7 sm:h-7" />
+    </Link>
+  </div>
+</footer>
     </div>
   );
 }

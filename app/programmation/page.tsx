@@ -1,15 +1,15 @@
 'use client';
 
 
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Instagram, Facebook, LocateFixed, Menu, X } from "lucide-react";
 
 const artistes = [
   { id: 1, nom: 'Hugo brasse', image: '/hugobrasse.png', style: 'Selecta Roots', soundcloud: 'https://on.soundcloud.com/XyF2Hy1fXjZyAa329', jour: 'vendredi', scene: 'spirale' },
   { id: 2, nom: 'Charly Uzly & Paco', image: '/charlyuzly&paco.jpg', style: 'UK Dub', icon: 'locaux', jour: 'vendredi', scene: 'spirale' },
-  { id: 3, nom: 'Critikal sub & Thomas Anton', image: '/kritikalsubthomasanton.jpg', style: 'Dub', jour: 'vendredi', scene: 'spirale' },
+  { id: 3, nom: 'Critikal sub & Thomas Anton', image: '/critikalsubthomasanton.jpg', style: 'Dub', jour: 'vendredi', scene: 'spirale' },
   { id: 4, nom: 'Roots Zombie', image: '/rootszombie.jpg', style: 'Dub to electro D', jour: 'vendredi', scene: 'spirale' },
   { id: 5, nom: 'Piou', image: '/piou.jpg', style: 'Mental Dub', jour: 'vendredi', scene: 'spirale' },
   { id: 6, nom: 'Totemik Anigua', image: '/totemikanigua.jpg', style: 'Mental Tekno', jour: 'vendredi', scene: 'spirale' },
@@ -19,8 +19,8 @@ const artistes = [
   { id: 10, nom: 'DR Paco', image: '/drpaco.png', style: 'Tribe Tekno', jour: 'vendredi', scene: 'spirale' },
   { id: 11, nom: 'GRE', image: '/gre.jpg', style: 'Tribe Tekno Tribe Hybnotique', jour: 'vendredi', scene: 'spirale' },
   { id: 12, nom: 'Nico', image: '/nico.jpg', style: 'Disco', icon: 'immersif', jour: 'vendredi', scene: 'fractale' },
-  { id: 13, nom: 'Jacqueline', image: '/jacqueline.jpg', style: 'Indie/groove', icon: 'locaux', jour: 'vendredi', scene: 'fractale' },
-  { id: 14, nom: 'Jako', image: '/jako.jpg', style: 'Minimale Psy', jour: 'vendredi', scene: 'fractale' },
+  { id: 13, nom: 'Jacqueline', image: '/jacqueline.jpeg', style: 'Indie/groove', icon: 'locaux', jour: 'vendredi', scene: 'fractale' },
+  { id: 14, nom: 'Jako', image: '/jako.jpg', style: 'Minimale Psy', icon: 'immersif',jour: 'vendredi', scene: 'fractale' },
   { id: 15, nom: 'Stoat', image: '/stoat.jpg', style: 'Psy Dark Groove', jour: 'vendredi', scene: 'fractale' },
   { id: 16, nom: 'Aim', image: '/aim.jpg', style: 'Psytech', jour: 'vendredi', scene: 'fractale' },
   { id: 17, nom: '5XL', image: '/5xl.jpg', style: 'Psytech to Bushprog', icon: 'immersif', jour: 'vendredi', scene: 'fractale' },
@@ -30,7 +30,7 @@ const artistes = [
   { id: 21, nom: 'Tilda', image: '/tilda.jpg', style: 'Dark Psytech', jour: 'vendredi', scene: 'fractale' },
   { id: 22, nom: 'Johnny Void', image: '/johnnyvoid.jpg', style: 'Psytechno Indus', jour: 'vendredi', scene: 'fractale' },
   { id: 23, nom: 'Mimix', image: '/mimix.jpg', style: 'Tribal House', icon: 'locaux', jour: 'samedi', scene: 'spirale' },
-  { id: 24, nom: 'Alaska', image: '/alaska.jpg', style: 'Bass House', jour: 'samedi', scene: 'spirale' },
+  { id: 24, nom: 'Alaska', image: '/alaska.jpeg', style: 'Bass House', jour: 'samedi', scene: 'spirale' },
   { id: 25, nom: 'Catharso', image: '/catharso.jpg', style: 'Bass House', jour: 'samedi', scene: 'spirale' },
   { id: 26, nom: 'Alempyre', image: '/alempyre.jpg', style: 'Techno Groove', icon: 'immersif', jour: 'samedi', scene: 'spirale' },
   { id: 27, nom: 'b2b2b2b elusive 23', image: '/b2b2b2belusive23.jpg', style: 'DNB', jour: 'samedi', scene: 'spirale' },
@@ -45,7 +45,7 @@ const artistes = [
   { id: 36, nom: 'Primabot', image: '/primabot.jpg', style: 'Psybass/Downtempo', jour: 'samedi', scene: 'fractale' },
   { id: 37, nom: 'Magavoïma', image: '/magavoima.jpg', style: 'Ethnic Groove', jour: 'samedi', scene: 'fractale' },
   { id: 38, nom: 'Eneris', image: '/eneris.jpg', style: 'Psyprog', jour: 'samedi', scene: 'fractale' },
-  { id: 39, nom: 'Polette', image: '/polette.jpg', style: 'Dirty Prog', icon: 'locaux', jour: 'samedi', scene: 'fractale' },
+  { id: 39, nom: 'Polette de la nuit', image: '/polette.jpg', style: 'Dirty Prog', icon: 'locaux', jour: 'samedi', scene: 'fractale' },
   { id: 40, nom: 'Clitorock', image: '/clitorock.jpg', style: 'Psyprog', jour: 'samedi', scene: 'fractale' },
   { id: 41, nom: 'Kalki', image: '/kalki.jpg', style: 'Psyprog', jour: 'samedi', scene: 'fractale' },
   { id: 42, nom: 'Lart Cène & Atef Younsi', image: '/lartceneatefyounsi.jpg', style: 'Mental Oriental', jour: 'samedi', scene: 'fractale' },
@@ -60,12 +60,8 @@ const artistes = [
 
 
 export default function Artistes() {
-  const [filtre_localisation, setFiltreLoc] = useState('all');
 
-  const artistesFiltresLoc = artistes.filter((artiste) => {
-    if (filtre_localisation === 'all') return true;
-    return artiste.icon === filtre_localisation;
-  });
+
   const groupes = [
     { titre: 'Vendredi - Scène Spirale', jour: 'vendredi', scene: 'spirale' },
     { titre: 'Vendredi - Scène Fractale', jour: 'vendredi', scene: 'fractale' },
@@ -73,22 +69,23 @@ export default function Artistes() {
     { titre: 'Samedi - Scène Fractale', jour: 'samedi', scene: 'fractale' },
   ];
 
+  const [filtre_localisation, setFiltreLoc] = useState('all');
+
   const [filtre_style, setFiltreStyle] = useState('all');
   const artistesFiltres = artistes.filter((artiste) => {
     const matchLoc = filtre_localisation === 'all' || artiste.icon === filtre_localisation;
-    const matchStyle = filtre_style === 'all' || artiste.style === filtre_style;
+    const matchStyle = filtre_style === 'all'
+      || artiste.style.toLowerCase().includes(filtre_style.toLowerCase());
     return matchLoc && matchStyle;
   });
 
-  const artistesFiltresStyle = artistes.filter((artiste) => {
-    if (filtre_style === 'all') return true;
-    return artiste.icon === filtre_style;
-  });
+
   const [menuOpen, setMenuOpen] = useState(false);
   return (
 
 
     <div className="min-h-screen bg-gray-900 text-white">
+      {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
         <div className="flex items-center w-full">
@@ -120,7 +117,7 @@ export default function Artistes() {
 
         {/* Menu Mobile */}
         {menuOpen && (
-          <div className="md:hidden absolute top-full left-0 w-full bg-[#0f1a1c] text-white px-6 py-4 space-y-3 shadow-md z-40">
+          <div className="md:hidden absolute top-full left-0 w-full bg-black bg-opacity-80 text-white px-6 py-4 space-y-3 shadow-md z-40">
             <Link href="/billetterie" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Billetterie</Link>
             <Link href="/programmation" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Programmation</Link>
             <Link href="/village" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Village</Link>
@@ -131,18 +128,17 @@ export default function Artistes() {
         )}
       </nav>
 
-
       {/* Hero Section */}
-      <div className="relative w-full">
-        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-auto object-cover" />
+      <div className="relative w-full pt-20 sm:pt-24">
+        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-screen object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '33%' }}>
+        <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '36%' }}>
             Programmation
-          </h1>
+          </motion.h1>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#192622] flex flex-col items-center justify-end p-4 text-white"
-          style={{ background: "linear-gradient(to bottom, transparent 80%, transparent 65%, #192622 100%)" }}></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#192622] to-100%"></div>
       </div>
+      {/* Fin template */}
 
       <div className="w-full text-center bg-[#192622] px-4 sm:px-8">
         <div className="flex items-center justify-center mb-4">
@@ -155,65 +151,37 @@ export default function Artistes() {
 
         {/* ✅ MENU FILTRE */}
         <div className="pb-8">
-  <select
-    value={filtre_localisation}
-    onChange={(e) => setFiltreLoc(e.target.value)}
-    className="bg-black text-white border border-gray-500 px-4 py-2 mr-4 rounded-md font-quantico w-full sm:w-auto mb-4"
-  >
-    <option value="all">Tous les artistes</option>
-    <option value="immersif">Immersif</option>
-    <option value="locaux">Locaux</option>
-  </select>
-  <select
-    value={filtre_style}
-    onChange={(e) => setFiltreStyle(e.target.value)}
-    className="bg-black text-white border border-gray-500 px-4 py-2 mr-4 rounded-md font-quantico w-full sm:w-auto"
-  >
-            <option value="all">Tous les styles</option>
-            <option value="Acid Rave">Acid Rave</option>
-            <option value="Acid Techno">Acid Techno</option>
-            <option value="Bass House">Bass House</option>
-            <option value="Dark Psy">Dark Psy</option>
-            <option value="Dark Psytech">Dark Psytech</option>
-            <option value="DNB">DNB</option>
-            <option value="Dirty Prog">Dirty Prog</option>
-            <option value="Disco">Disco</option>
-            <option value="Dub">Dub</option>
-            <option value="Dub to electro D">Dub to electro D</option>
-            <option value="Early Tekno">Early Tekno</option>
-            <option value="Ethnic Groove">Ethnic Groove</option>
-            <option value="Full on">Full on</option>
-            <option value="Goa">Goa</option>
-            <option value="Groovy Techno">Groovy Techno</option>
-            <option value="Hybrid">Hybrid</option>
-            <option value="Hybrid Tekno">Hybrid Tekno</option>
-            <option value="Hypnothic Techno">Hypnothic Techno</option>
-            <option value="Indie/groove">Indie/groove</option>
-            <option value="Live Tekno">Live Tekno</option>
-            <option value="Mental Dub">Mental Dub</option>
-            <option value="Mental Oriental">Mental Oriental</option>
-            <option value="Mental Tekno">Mental Tekno</option>
-            <option value="Mental Tribe">Mental Tribe</option>
-            <option value="Mentalcore">Mentalcore</option>
-            <option value="Minimale Psy">Minimale Psy</option>
-            <option value="Nighty Full on">Nighty Full on</option>
-            <option value="Organic Psy chill + YOGA">Organic Psy chill + YOGA</option>
-            <option value="Psy Dark Groove">Psy Dark Groove</option>
-            <option value="Psybass/Downtempo">Psybass/Downtempo</option>
-            <option value="Psyprog">Psyprog</option>
-            <option value="Psytech">Psytech</option>
-            <option value="Psytech to Bushprog">Psytech to Bushprog</option>
-            <option value="Psytechno Indus">Psytechno Indus</option>
-            <option value="Selecta Roots">Selecta Roots</option>
-            <option value="Techno Cinématique">Techno Cinématique</option>
-            <option value="Techno Groove">Techno Groove</option>
-            <option value="Tribal House">Tribal House</option>
-            <option value="Tribe Mental">Tribe Mental</option>
-            <option value="Tribe Tekno">Tribe Tekno</option>
-            <option value="Tribe Tekno Tribe Hybnotique">Tribe Tekno Tribe Hybnotique</option>
-            <option value="UK Dub">UK Dub</option>
-
+          <select
+            value={filtre_localisation}
+            onChange={(e) => setFiltreLoc(e.target.value)}
+            className="bg-black text-white border border-gray-500 px-4 py-2 mr-4 rounded-md font-quantico w-full sm:w-auto mb-4"
+          >
+            <option value="all">Tous les artistes</option>
+            <option value="immersif">Immersif</option>
+            <option value="locaux">Locaux</option>
           </select>
+          <select
+            value={filtre_style}
+            onChange={(e) => setFiltreStyle(e.target.value)}
+            className="bg-black text-white border border-gray-500 px-4 py-2 mr-4 rounded-md font-quantico w-full sm:w-auto"
+          >
+            <option value="all">Tous les styles</option>
+            <option value="Acid">Acid</option>
+            <option value="Dub">Dub</option>
+            <option value="Techno">Techno</option>
+            <option value="Tekno">Tekno</option>
+            <option value="Psy">Psy</option>
+            <option value="House">House</option>
+            <option value="Tribe">Tribe</option>
+            <option value="Mental">Mental</option>
+            <option value="Indie">Indie</option>
+            <option value="Groove">Groove</option>
+            <option value="Minimale">Minimale</option>
+            <option value="Psy">Psy</option>
+            <option value="Disco">Disco</option>
+            <option value="DNB">DNB</option>
+          </select>
+
         </div>
       </div>
 
@@ -263,29 +231,21 @@ export default function Artistes() {
       })}
 
 
-      <footer className="p-5 bg-[#192622] text-gray-400">
-        <div className="flex items-center justify-center space-x-4">
-          {/* Logo Facebook */}
-          <Link
-            href="https://www.facebook.com/profile.php?id=100089358905510"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook className="w-6 h-6" />
+      <footer className="py-6 sm:py-8 px-6 bg-[#192622] text-gray-400">
+        <div className="flex items-center justify-center space-x-8">
+          <Link href="https://www.facebook.com/profile.php?id=100089358905510" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+            <Facebook className="w-6 h-6 sm:w-7 sm:h-7" />
           </Link>
 
-          {/* Texte centré */}
-          <p className="text-sm text-[#6ca671] text-center font-quantico">&copy; 2025 Immersif event - Tous droits réservés.</p>
+          <div className="flex flex-col items-center space-y-2">
+            <p className="text-xs sm:text-sm text-center font-quantico text-[#6ca671]">&copy; 2025 Immersif event - Tous droits réservés.</p>
+            <Link href="/mentions-legales" className="text-xs text-center sm:text-sm font-quantico text-[#6ca671] hover:text-green-700">
+              Mentions légales & politique de confidentialité
+            </Link>
+          </div>
 
-          {/* Logo Instagram */}
-          <Link
-            href="https://www.instagram.com/immersif.event/"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram className="w-6 h-6" />
+          <Link href="https://www.instagram.com/immersif.event/" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+            <Instagram className="w-6 h-6 sm:w-7 sm:h-7" />
           </Link>
         </div>
       </footer>

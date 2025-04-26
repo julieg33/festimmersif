@@ -1,28 +1,47 @@
 'use client';
 
 import Link from 'next/link';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Ticket, Music, PartyPopper, Sprout, Shell, Biohazard, Menu, X, Instagram, Facebook } from "lucide-react";
+import { motion } from 'framer-motion';
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize(); // appel initial
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div className="relative min-h-screen bg-black text-white">
+      {/* Début template */}
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full p-5 transition-all bg-black bg-opacity-80 z-50 font-orbitron">
-        <div className="w-full flex justify-between items-center">
-          <Link href="/" className="pl-4 group">
+      <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
+        <div className="flex items-center w-full">
+          {/* Logo totalement à gauche */}
+          <Link href="/" className="group pl-2 sm:pl-6">
             <div className="cursor-pointer">
-              <h1 className="text-xl group-hover:text-gray-300">IMMERSIF EVENT</h1>
-              <p className="text-sm text-gray-400 leading-none group-hover:text-gray-500">22–23 août 2025</p>
+              <h1 className="text-lg sm:text-xl group-hover:text-gray-300">IMMERSIF EVENT</h1>
+              <p className="text-xs sm:text-sm text-gray-400 leading-none group-hover:text-gray-500">22–23 août 2025</p>
             </div>
           </Link>
-          <div className="md:hidden pr-4">
-            <button onClick={() => setIsOpen(!isOpen)}>
-              {isOpen ? <X className="w-6 h-6 text-white" /> : <Menu className="w-6 h-6 text-white" />}
+
+          {/* Burger menu (mobile only) */}
+          <div className="ml-auto md:hidden pr-4">
+            <button onClick={() => setMenuOpen(!menuOpen)} aria-label="Menu">
+              {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
-          <ul className={`md:flex space-x-4 pr-4 hidden`}>
+
+          {/* Menu Desktop */}
+          <ul className="hidden md:flex space-x-4 ml-auto pr-4 sm:pr-6 text-sm sm:text-base">
             <li><Link href="/billetterie" className="hover:text-gray-300">Billetterie</Link></li>
             <li><Link href="/programmation" className="hover:text-gray-300">Programmation</Link></li>
             <li><Link href="/village" className="hover:text-gray-300">Village</Link></li>
@@ -31,34 +50,43 @@ export default function Home() {
             <li><Link href="/prestataires" className="hover:text-gray-300">Prestataires</Link></li>
           </ul>
         </div>
-        <div className={`md:hidden ${isOpen ? "block" : "hidden"} bg-black bg-opacity-90 p-4 absolute top-16 w-full left-0`}>
-          <ul className="flex flex-col space-y-2 text-center">
-            <li><Link href="/billetterie" className="block hover:text-gray-300" onClick={() => setIsOpen(false)}>Billetterie</Link></li>
-            <li><Link href="/derniers_evenements" className="block hover:text-gray-300" onClick={() => setIsOpen(false)}>Derniers évènements</Link></li>
-            <li><Link href="/artistes" className="block hover:text-gray-300" onClick={() => setIsOpen(false)}>Artistes</Link></li>
-            <li><Link href="/prestataires" className="block hover:text-gray-300" onClick={() => setIsOpen(false)}>Prestataires</Link></li>
-            <li><Link href="/info" className="block hover:text-gray-300" onClick={() => setIsOpen(false)}>Infos pratiques</Link></li>
-          </ul>
-        </div>
+
+        {/* Menu Mobile */}
+        {menuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-black bg-opacity-80 text-white px-6 py-4 space-y-3 shadow-md z-40">
+              <Link href="/billetterie" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Billetterie</Link>
+            <Link href="/programmation" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Programmation</Link>
+            <Link href="/village" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Village</Link>
+            <Link href="/info" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Infos pratiques</Link>
+            <Link href="/derniers_evenements" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Derniers évènements</Link>
+            <Link href="/prestataires" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Prestataires</Link>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
-      <div className="relative w-full">
-        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-auto object-cover" />
+      
+      <div className="relative w-full pt-20 sm:pt-24">
+        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-screen object-cover object-center" />
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-          <h1 className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '33%' }}>
-            Fest'immersif
-          </h1>
-          <p className="font-quantico" style={{ position: 'absolute', top: '39%' }}>Quand la nature reprend ses droits</p>
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#192622] flex flex-col items-center justify-end p-4 text-white"
-          style={{ background: "linear-gradient(to bottom, transparent 80%, transparent 65%, #192622 100%)" }}></div>
-      </div>
 
-      {/* Introduction */}
-      <section className="bg-[#192622] text-white  pb-20 flex items-center justify-center ">
-        <div className="container mx-auto flex justify-center items-center w-full">
-          <div className="w-5/6 text-center">
+          <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '36%' }}>
+            Fest'immersif
+          </motion.h1>
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }} style={{ position: 'absolute', top: '43%' }}>Quand la nature reprend ses droits
+
+          </motion.p>
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#192622] to-100%"></div>
+        </div>
+      {/* Fin template */}
+
+
+      <section className="bg-[#192622] text-white py-16 px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto flex flex-col md:flex-row justify-center items-center w-full">
+          {/* Texte en haut sur mobile, à gauche sur desktop */}
+          <div className="w-full md:w-5/6 text-center">
+
             <div className="flex items-center justify-center mb-4">
               <Sprout className="w-8 h-8 text-[#6ca671] mr-4" />
               <h2 className="text-4xl font-bebasNeue">Bienvenue dans une expérience hors du temps</h2>
@@ -66,10 +94,9 @@ export default function Home() {
             </div>
 
             <p className="text-lg py-6 font-quantico leading-relaxed">
-              Où la nature et la fête ne font qu’un. Fest’Immersif revient en force pour une édition explosive,
+              Où la nature et la fête ne font qu’un. Fest’Immersif arrive en force pour une édition explosive,
               fusionnant les battements électroniques avec le frisson d’un monde où la nature reprend ses droits
-              sur l’industrialisation. Préparez-vous à vivre deux nuits de pure extase sonore, sur un spot secret
-              et sauvage, ancré en plein cœur du territoire girondin.
+              sur l’industrialisation. Préparez-vous à vivre deux nuits de pure extase sonore, sur un spot sauvage, ancré en plein cœur du territoire girondin.
             </p>
             <p className="text-lg py-6 font-quantico leading-relaxed">
               Célébrons ensemble la richesse de la scène locale, où chaque DJ, artiste et intervenant contribue à façonner une expérience unique. Fest’Immersif est un hommage à la culture underground girondine, une bulle hors du temps où la nature et la musique fusionnent pour créer un monde à part.
@@ -79,13 +106,18 @@ export default function Home() {
               Rejoignez-nous et laissez-vous happer par la spirale de Immersif Event !
             </p>
           </div>
-          <div className="w-1/3 flex justify-end ml-auto">
-            <div className="w-80 h-[30rem] overflow-hidden rounded-t-full">
+          <div className="w-full lg:w-1/3 flex justify-center lg:justify-end">
+            <div className="w-64 sm:w-80 h-[24rem] sm:h-[30rem] overflow-hidden rounded-t-full">
               <img src="/img_hp_1.jpg" alt="Décoration immersive" className="w-full h-full object-cover" />
             </div>
           </div>
+
         </div>
       </section>
+
+
+
+
 
       {/* Scènes */}
       <section className="bg-[#192622] text-white pt-20 pb-20 px-6">
@@ -97,12 +129,13 @@ export default function Home() {
             <div className="bg-[#1f3d46] p-6 rounded-lg shadow-lg">
               <div className="flex items-center justify-center mb-4">
                 <Shell className="w-6 h-6 text-[#6ca671] mr-4" />
-                <h4 className="text-xl font-semibold text-[#6ca671]">La Scène Spirale</h4> {/* Couleur modifiée */}
+                <h4 className="text-xl font-audiowide text-[#6ca671]">Scène Spirale</h4> {/* Couleur modifiée */}
                 <Shell className="w-6 h-6 text-[#6ca671] ml-4" />
               </div>
               <p className="text-lg font-quantico leading-relaxed text-center">
-                Plongez dans une transe hypnotique, guidée par des DJ’s de niche et des artistes locaux passionnés.
-                Un tourbillon de sons envoûtants vous attend, prêt à vous faire perdre la notion du temps.
+              Bienvenue dans l’univers de la scène tekno. Un espace libre, brut, où les sons résonnent fort et profond. Ici, la musique évolue, se mélange, et casse les codes. Entre basses lourdes, rythmes mentaux et énergies tribales, l’esprit underground est partout.
+
+Pas de règles, juste la vibe, le partage et la connexion à travers le son. Prépare-toi à plonger dans une expérience sonore intense.
               </p>
             </div>
 
@@ -110,12 +143,13 @@ export default function Home() {
             <div className="bg-[#1f3d46] p-6 rounded-lg shadow-lg">
               <div className="flex justify-center items-center mb-4">
                 <Biohazard className="w-6 h-6 text-[#6ca671] mr-4" />
-                <h4 className="text-xl font-semibold text-[#6ca671]">La Scène Fractale</h4> {/* Couleur modifiée */}
+                <h4 className="text-xl font-audiowide text-[#6ca671]">Scène Fractale</h4> {/* Couleur modifiée */}
                 <Biohazard className="w-6 h-6 text-[#6ca671] ml-4" />
               </div>
               <p className="text-lg font-quantico leading-relaxed">
-                Un sanctuaire dédié aux basses percutantes et aux kicks acérés. L’univers tekno se déchaîne ici,
-                dans un décor où le chaos industriel laisse place à une énergie brute et organique.
+              Bienvenue dans l’univers de la scène trance. Un espace où la musique t’emmène au-delà des limites, entre rythmes hypnotiques et basses profondes. Ici, l’énergie est fluide, changeante, et chaque son te guide dans un voyage intérieur.
+
+Pas de frontières, juste des vibrations qui t’invitent à explorer des états de conscience uniques, à te laisser porter par le flux et à t’immerger dans la trance.
               </p>
             </div>
 
@@ -124,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* Nouvelle section : Aventure immersive */}
-      <section className="bg-[#192622] text-white py-16 px-6">
+      <section className="bg-[#192622] text-white py-6 px-6">
         <div className="container mx-auto text-center">
           <h3 className="text-3xl font-bebasNeue mb-8">Bien plus qu’un festival, une aventure immersive !</h3>
           <p className="text-lg font-quantico mb-8 leading-relaxed">
@@ -191,7 +225,7 @@ export default function Home() {
 
 
       {/* Sections redirection */}
-      <section className="bg-[#192622]  text-white py-0 pb-20">
+      <section className="bg-[#192622]  text-white py-0 pb-20 px-6">
         <h3 className="text-4xl font-bebasNeue mb-12 text-center text-gradient bg-clip-text">
           Vous êtes prêts pour une aventure hors du commun ?
         </h3>
@@ -200,8 +234,8 @@ export default function Home() {
           <div className="flex flex-col items-center bg-[#1f3d46] p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
             <Music size={50} className="text-[#6ca671] mb-6 transform hover:rotate-12 transition-transform duration-300" />
             <p className="mb-6 font-quantico text-lg leading-relaxed">Nous avons sélectionné les meilleurs artistes pour te faire vibrer au rythme d’une nature sauvage et d’une ambiance envoûtante.</p>
-            <Link href="/artistes">
-              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-quantico text-lg">
+            <Link href="/programmation">
+              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-audiowide text-lg">
                 Programmation
               </button>
             </Link>
@@ -212,7 +246,7 @@ export default function Home() {
             <Ticket size={50} className="text-[#6ca671] mb-6 transform hover:rotate-12 transition-transform duration-300" />
             <p className="mb-6 font-quantico text-lg leading-relaxed">Réserve ta place dès maintenant et prépare-toi à vivre une immersion sonore et visuelle inédite.</p>
             <Link href="/billetterie">
-              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-quantico text-lg">
+              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-audiowide text-lg">
                 Billetterie
               </button>
             </Link>
@@ -223,7 +257,7 @@ export default function Home() {
             <PartyPopper size={50} className="text-[#6ca671] mb-6 transform hover:rotate-12 transition-transform duration-300" />
             <p className="mb-6 font-quantico text-lg leading-relaxed">Revivez les moments magiques des précédentes éditions et plongez dans l’univers unique que nous avons créé.</p>
             <Link href="/derniers_evenements">
-              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-quantico text-lg">
+              <button className="bg-[#6ca671] text-white px-6 py-3 rounded-full hover:bg-green-700 transition-colors duration-200 font-audiowide text-lg">
                 Précédentes éditions
               </button>
             </Link>
@@ -231,32 +265,24 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="p-5 bg-[#192622] text-gray-400">
-        <div className="flex items-center justify-center space-x-4">
-          {/* Logo Facebook */}
-          <Link
-            href="https://www.facebook.com/profile.php?id=100089358905510"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Facebook className="w-6 h-6" />
-          </Link>
+      <footer className="py-6 sm:py-8 px-6 bg-[#192622] text-gray-400">
+  <div className="flex items-center justify-center space-x-8">
+    <Link href="https://www.facebook.com/profile.php?id=100089358905510" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+      <Facebook className="w-6 h-6 sm:w-7 sm:h-7" />
+    </Link>
 
-          {/* Texte centré */}
-          <p className="text-sm text-[#6ca671] text-center font-quantico">&copy; 2025 Immersif event - Tous droits réservés.</p>
+    <div className="flex flex-col items-center space-y-2">
+      <p className="text-xs sm:text-sm text-center font-quantico text-[#6ca671]">&copy; 2025 Immersif event - Tous droits réservés.</p>
+      <Link href="/mentions-legales" className="text-xs text-center sm:text-sm font-quantico text-[#6ca671] hover:text-green-700">
+        Mentions légales & politique de confidentialité
+      </Link>
+    </div>
 
-          {/* Logo Instagram */}
-          <Link
-            href="https://www.instagram.com/immersif.event/"
-            className="text-[#6ca671] hover:text-green-700"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Instagram className="w-6 h-6" />
-          </Link>
-        </div>
-      </footer>
+    <Link href="https://www.instagram.com/immersif.event/" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
+      <Instagram className="w-6 h-6 sm:w-7 sm:h-7" />
+    </Link>
+  </div>
+</footer>
     </div>
   );
 }
