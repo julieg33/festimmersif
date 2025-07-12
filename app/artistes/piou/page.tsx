@@ -10,7 +10,7 @@ import { Instagram, Facebook, X, Menu } from "lucide-react";
 export default function Hugo() {
   const artiste = {
     nom: "Piou",
-    image: "/piou.jpg", // à remplacer
+    image: "/piou.JPG", // à remplacer
     bio: `
 Piou a grandi au rythme de la musique électronique.
 C’est en découvrant des artistes tels que The Prodigy, Pendulum ou encore Fatboy Slim qu’une

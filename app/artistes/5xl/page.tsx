@@ -10,7 +10,7 @@ import { Instagram, Facebook, X, Menu } from "lucide-react";
 export default function xl() {
   const artiste = {
     nom: "5XL",
-    image: "/5xl.jpg", // à remplacer
+    image: "/5XL.jpg", // à remplacer
 
     soundcloud: "",
     instagram: "",

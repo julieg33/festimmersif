@@ -10,7 +10,7 @@ import { Instagram, Facebook, X, Menu } from "lucide-react";
 export default function knaf() {
   const artiste = {
     nom: "Knäf",
-    image: "/knaf.jpg", // à remplacer
+    image: "/knaf.JPG", // à remplacer
     spotify:"https://open.spotify.com/intl-fr/artist/1RkhIsXjfgk5gVQ0TW5tRm?si=jCNtDI7lTnmbjyblSgTgbg",
     soundcloud: "https://on.soundcloud.com/tpMpStiepMIAzkvD73",
     instagram: "https://www.instagram.com/__knaf__?utm_source=ig_web_button_share_sheet&igsh=bm0wM25tODZqMHE0",

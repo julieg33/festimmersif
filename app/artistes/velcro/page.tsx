@@ -10,7 +10,7 @@ import { Instagram, Facebook, X, Menu } from "lucide-react";
 export default function Velcro() {
   const artiste = {
     nom: "Velcro",
-    image: "/velcro.jpg", // à remplacer
+    image: "/velcro.JPG", // à remplacer
 
     soundcloud: "https://on.soundcloud.com/Bz9Hweq54V5oqEt8Rv",
     instagram: "https://www.instagram.com/velcro.sound?utm_source=ig_web_button_share_sheet&igsh=MXg0Z2Npc3RpcGV3Nw==",

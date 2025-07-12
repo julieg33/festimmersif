@@ -8,7 +8,7 @@ import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer, } from "rech
 
 //Pour le diagramme 
 const data = [
-  { name: "Frias de fonctionnement", value: 11 },
+  { name: "Frais de fonctionnement", value: 11 },
   { name: "Communication", value: 2 },
   { name: "Prestation", value: 5 },
   { name: "Exploitation", value: 23 },

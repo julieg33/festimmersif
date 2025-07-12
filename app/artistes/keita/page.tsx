@@ -10,7 +10,7 @@ import { Instagram, Facebook, X, Menu } from "lucide-react";
 export default function Keita() {
   const artiste = {
     nom: "Keita",
-    image: "/keita.jpg", // à remplacer
+    image: "/keita.JPG", // à remplacer
 
     soundcloud: "https://on.soundcloud.com/O7ivZJP9sHodsXtld2",
     instagram: "https://www.instagram.com/keita_shz?utm_source=ig_web_button_share_sheet&igsh=MTk0bGN2dTZieGR6Mg==",
