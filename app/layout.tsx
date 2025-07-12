@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins, Merriweather, Geist_Mono, Orbitron, Audiowide, Quantico, Saira_Stencil_One, Bebas_Neue } from "next/font/google";
+import { Poppins, Merriweather, Geist_Mono, Orbitron, Audiowide, Quantico, Saira_Stencil_One, Bebas_Neue, Turret_Road, Syne_Tactile } from "next/font/google";
 import "./globals.css";
 import Link from 'next/link';
 
@@ -19,11 +19,23 @@ const quantico = Quantico({
   subsets: ['latin'], 
   weight: ['400'] 
 });
+const turret = Turret_Road({ 
+  variable: "--font-turret", 
+  subsets: ['latin'], 
+  weight: ['800'] 
+});
 // Importation des polices avec variables CSS
 const orbitron = Orbitron({
   variable: "--font-orbitron",
   subsets: ["latin"],
   weight: ["400", "700"], // Ajoute les poids que tu veux
+});
+
+
+const syne = Syne_Tactile({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["400"], // Ajoute les poids que tu veux
 });
 
 const audiowide = Audiowide({
@@ -50,10 +62,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fest'Immersif",
-  description: "Festival by IMMERSIF EVENT",
+  title: "Fest.Immersif",
+  description: "Fest.Immersif - L\’Écho Sauvage. 22 & 23 août 2025 •📍Blasimon (33) 🌀 Tekno | Groove | Dub 💫 Psytrance | Psytechno",
+  keywords: ["festival", "immersif", "musique", "électronique", "gironde", "techno"],
   icons: {
-    icon: "/logo_immersif.png", // ou /favicon.png, etc.
+    icon: "/logo_immersif.png",
   }
 };
 
@@ -64,7 +77,7 @@ export default async function RootLayout({
   return (
     <html lang="fr">
       <body
-        className={`${poppins.variable} ${merriweather.variable} ${geistMono.variable} ${orbitron.variable} ${quantico.variable} ${audiowide.variable} ${sairaStencil.variable} ${bebasNeue.variable} antialiased`}
+        className={`${poppins.variable} ${merriweather.variable} ${geistMono.variable} ${syne.variable} ${orbitron.variable} ${turret.variable} ${quantico.variable} ${audiowide.variable} ${sairaStencil.variable} ${bebasNeue.variable} antialiased`}
       >
            
         {children}

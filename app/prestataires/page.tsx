@@ -37,7 +37,6 @@ export default function Prestataires() {
             <li><Link href="/village" className="hover:text-gray-300">Village</Link></li>
             <li><Link href="/info" className="hover:text-gray-300">Infos pratiques</Link></li>
             <li><Link href="/derniers_evenements" className="hover:text-gray-300">Derniers évènements</Link></li>
-            <li><Link href="/prestataires" className="hover:text-gray-300">Prestataires</Link></li>
           </ul>
         </div>
 
@@ -49,22 +48,38 @@ export default function Prestataires() {
             <Link href="/village" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Village</Link>
             <Link href="/info" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Infos pratiques</Link>
             <Link href="/derniers_evenements" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Derniers évènements</Link>
-            <Link href="/prestataires" className="block hover:text-gray-300" onClick={() => setMenuOpen(false)}>Prestataires</Link>
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
       <div className="relative w-full pt-20 sm:pt-24">
-        <img src="/fond_immersif.png" alt="Programmation" className="w-full h-screen object-cover object-center" />
+        {/* Image Desktop */}
+        <img
+          src="/fond_immersif.png"
+          alt="Programmation"
+          className="hidden sm:block w-full h-screen object-cover object-center"
+        />
+
+        {/* Image Mobile */}
+        <img
+          src="/fond_immersif_mobile.png"
+          alt="Programmation mobile"
+          className="block sm:hidden w-full h-auto object-cover object-center"
+        />
+
+        {/* Fond noir + titre */}
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-        <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}  className="text-5xl md:text-6xl text-white font-bebasNeue" style={{ position: 'absolute', top: '36%' }}>
+          <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="text-5xl md:text-6xl text-white font-turret absolute top-[22%] sm:top-[36%]">
             Prestataires
           </motion.h1>
+      
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent via-70% to-[#192622] to-100%"></div>
-      </div>
 
+        {/* Dégradé */}
+        <div className="absolute w-full h-32 sm:h-full bottom-0 bg-gradient-to-b from-transparent via-transparent via-50% to-[#192622] sm:via-70% sm:to-[#192622] to-100%"></div>
+
+      </div>
 
 
       {/* Fin template */}
