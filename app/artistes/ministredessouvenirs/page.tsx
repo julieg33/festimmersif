@@ -79,31 +79,12 @@ export default function ministredessouvenirs() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...    </p>
+Sors ta plus belle chemisette, ton plus beau couvre chef et viens groover sur le set du Minsitre des Souvenirs.
+Ambiance décontractée et ensoleillée, voila comment bien commencer le FESTIMMERSIF !
+    </p>
 
 
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
+
     </div>
   </div>
 </section>

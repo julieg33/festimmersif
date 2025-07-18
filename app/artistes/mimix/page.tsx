@@ -77,7 +77,9 @@ export default function Mimix() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...    </p>
+Il fait ses premiers pas derrière les platines avec la trance et la psytrance, attiré par leurs sonorités planantes et leur énergie hypnotique. Curieux et en constante évolution, il s’inspire des sonorités berlinoises et s’oriente vers une techno plus organique, teintée de minimal et de tech house.
+Aujourd’hui, ses sets mélangent groove lent, avec une énergie directe, acidulée, toujours bien dosée.
+    </p>
 
 
       {/* Réseaux sociaux */}

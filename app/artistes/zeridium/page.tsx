@@ -18,7 +18,7 @@ export default function Zeridium() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-<div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
+    <div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
       {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
@@ -60,65 +60,68 @@ export default function Zeridium() {
         )}
       </nav>
 
-<main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
-  <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
-    {/* Photo à gauche */}
-    <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
-      <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
-        <img
-          src={artiste.image}
-          alt={`Photo de ${artiste.nom}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+      <main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
+        <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
+            {/* Photo à gauche */}
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
+              <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
+                <img
+                  src={artiste.image}
+                  alt={`Photo de ${artiste.nom}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-    {/* Texte à droite */}
-    <div className="w-full lg:w-2/3 text-center lg:text-left">
-      <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
+            {/* Texte à droite */}
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-5xl text-[#9ec37b] font-bebasNeue ">{artiste.nom}</h1>
+              <h2 className="text-2xl text-[#9ec37b] font-bebasNeue mb-6"><em>Johnny Void</em></h2>
 
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-Le projet de psychedelic trance Zeridium a été créé par Joan, un Français originaire de Toulouse.
-Il assiste à sa première soirée psytrance en 2009 à Goa, sur la plage d’Anjuna.
-Après avoir voyagé pendant quatre ans autour du monde et s’être inspiré des merveilles qui l’entouraient, il s’installe finalement en France, où il commence à produire sa propre musique psychédélique.
- </p>
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-En 2017, il signe chez Sahman Records, l’un des labels de psytrance les plus importants en France. Toujours en quête d’innovation, il produit et sort régulièrement des morceaux Full-On à la pointe du genre, avec des rythmes allant de 145 à 147 bpm.
-Il fusionne des sons analogiques et numériques, mêlés à des percussions tribales, des textures métalliques FM et des mélodies électrisantes, pour vous embarquer dans un véritable voyage sensoriel.
- </p>
-     
-
-
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-       
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Le projet de psychedelic trance Zeridium a été créé par Joan, un Français originaire de Toulouse.
+                Il assiste à sa première soirée psytrance en 2009 à Goa, sur la plage d’Anjuna.
+                Après avoir voyagé pendant quatre ans autour du monde et s’être inspiré des merveilles qui l’entouraient, il s’installe finalement en France, où il commence à produire sa propre musique psychédélique.
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                En 2017, il signe chez Sahman Records, l’un des labels de psytrance les plus importants en France. Toujours en quête d’innovation, il produit et sort régulièrement des morceaux Full-On à la pointe du genre, avec des rythmes allant de 145 à 147 bpm.
+                Il fusionne des sons analogiques et numériques, mêlés à des percussions tribales, des textures métalliques FM et des mélodies électrisantes, pour vous embarquer dans un véritable voyage sensoriel.
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Découvrez-le également sous son alias : <strong>Johnny Void</strong> ! </p>
 
 
-  </main>
+
+              {/* Réseaux sociaux */}
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+                <a
+                  href={artiste.soundcloud}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/soundcloud_logo.png"
+                    alt="SoundCloud"
+                    className="w-16 h-auto hover:opacity-90 transition-opacity"
+                  />
+                </a>
+
+                <Link
+                  href={artiste.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </main>
 
 
 

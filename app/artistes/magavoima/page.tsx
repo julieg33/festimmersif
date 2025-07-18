@@ -78,7 +78,7 @@ export default function magavoima() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...
+Fraîchement débarquée sur la scène bordelaise après un début explosif au Off Millésime à La Réole , elle captive le public avec un mélange audacieux de rythmes groovy, de percussions entraînantes et de voix mélodiques.
     </p>
 
 

@@ -18,7 +18,7 @@ export default function Tilda() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-<div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
+    <div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
       {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
@@ -60,65 +60,96 @@ export default function Tilda() {
         )}
       </nav>
 
-<main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
-  <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
-    {/* Photo à gauche */}
-    <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
-      <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
-        <img
-          src={artiste.image}
-          alt={`Photo de ${artiste.nom}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+      <main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
+        <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
+            {/* Photo à gauche */}
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
+              <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
+                <img
+                  src={artiste.image}
+                  alt={`Photo de ${artiste.nom}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-    {/* Texte à droite */}
-    <div className="w-full lg:w-2/3 text-center lg:text-left">
-      <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
+            {/* Texte à droite */}
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-5xl text-[#9ec37b] font-bebasNeue">{artiste.nom}</h1>
 
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-TILDA est une productrice et DJ franco-australienne qui fusionne les genres du dark minimal, de la techno hypnotiqueet de la techno psychédélique pour créer des sensations à la fois envoûtantes, brillantes et sensuelles sur le dancefloor — un mélange de lumière scintillante et d’ombres séduisantes.
+              <h2 className="text-2xl text-[#9ec37b] font-bebasNeue mb-6"><em>Vent des forêts</em></h2>
 
-     </p>
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-Ces dernières années, TILDA s’est produite dans toute l’Europe lors d’événements et festivals renommés, parmi lesquels : Fusion Festival (Allemagne), MO:DEM Festival (Croatie), Hadra Festival (France), Space Safari Festival(Belgique), Master of Puppets (République tchèque), Drops Festival (Slovénie), Sisyphos Berlin (Allemagne), Ethereal Decibel Festival (France), Bucht der Träumer Festival (Allemagne), Rabbit Eat Lettuce (Australie), et bien d’autres…
- </p>
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-Membre du collectif berlinois très respecté xXETEXx, TILDA a également sorti plusieurs productions originales sur les labels de techno Pointzero Rec (Belgique) et Occultech Rec (Inde), qui ont rencontré un vif succès aussi bien dans les charts que sur les pistes de danse.
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                TILDA est une productrice et DJ franco-australienne qui fusionne les genres du dark minimal, de la techno hypnotiqueet de la techno psychédélique pour créer des sensations à la fois envoûtantes, brillantes et sensuelles sur le dancefloor — un mélange de lumière scintillante et d’ombres séduisantes.
 
-     </p>
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Ces dernières années, TILDA s’est produite dans toute l’Europe lors d’événements et festivals renommés, parmi lesquels : Fusion Festival (Allemagne), MO:DEM Festival (Croatie), Hadra Festival (France), Space Safari Festival(Belgique), Master of Puppets (République tchèque), Drops Festival (Slovénie), Sisyphos Berlin (Allemagne), Ethereal Decibel Festival (France), Bucht der Träumer Festival (Allemagne), Rabbit Eat Lettuce (Australie), et bien d’autres…
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Membre du collectif berlinois très respecté xXETEXx, TILDA a également sorti plusieurs productions originales sur les labels de techno Pointzero Rec (Belgique) et Occultech Rec (Inde), qui ont rencontré un vif succès aussi bien dans les charts que sur les pistes de danse.
+
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Découvrez-la également sous son alias : <strong>Vent des forêts</strong> ! </p>
+
+              <p className="text-lg font-quantico leading-relaxed mb-6 mt-16">
+                Tilda
+              </p>
+              {/* Réseaux sociaux */}
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+                <a
+                  href={artiste.soundcloud}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/soundcloud_logo.png"
+                    alt="SoundCloud"
+                    className="w-16 h-auto hover:opacity-90 transition-opacity"
+                  />
+                </a>
+                <Link
+                  href={artiste.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+                            <p className="text-lg font-quantico leading-relaxed mb-6 mt-16">
+                Vent des forêts
+              </p>
+              {/* Réseaux sociaux */}
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+                <a
+                  href='https://on.soundcloud.com/7DmAfLhKDn4A2qvSDF'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/soundcloud_logo.png"
+                    alt="SoundCloud"
+                    className="w-16 h-auto hover:opacity-90 transition-opacity"
+                  />
+                </a>
+                <Link
+                  href='https://www.instagram.com/__ventdesforets?utm_source=ig_web_button_share_sheet&igsh=ZTAzaGp1aXF1M3Fp'
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
 
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  </main>
+      </main>
 
 
 

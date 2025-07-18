@@ -18,7 +18,7 @@ export default function Alyshka() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-<div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
+    <div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
       {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
@@ -60,59 +60,79 @@ export default function Alyshka() {
         )}
       </nav>
 
-<main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
-  <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
-    {/* Photo à gauche */}
-    <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
-      <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
-        <img
-          src={artiste.image}
-          alt={`Photo de ${artiste.nom}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+      <main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
+        <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
+            {/* Photo à gauche */}
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
+              <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
+                <img
+                  src={artiste.image}
+                  alt={`Photo de ${artiste.nom}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-    {/* Texte à droite */}
-    <div className="w-full lg:w-2/3 text-center lg:text-left">
-      <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
+            {/* Texte à droite */}
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-5xl text-[#9ec37b] font-bebasNeue ">{artiste.nom}</h1>
+              <h2 className="text-2xl text-[#9ec37b] font-bebasNeue mb-6"><em>Jalaya</em></h2>
 
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-Alyshka, née et ayant grandi en France, est une nouvelle étoile montante de la scène musicale psychédélique. Son parcours musical a commencé très tôt, nourri par un profond amour de la musique, qu’elle a rapidement maîtrisée à la batterie et à la flûte traversière dès son plus jeune âge. Après des années passées à explorer les fêtes et les festivals, absorbant diverses énergies et inspirations, Alyshka a lancé son propre projet de psytrance et trouve désormais naturellement sa place dans la scène underground française. Chaque performance raconte une histoire, où la musique groovy se heurte et se mêle à l’énergie et aux vibrations du public, créant une aventure unique sur le dancefloor. 
- </p>
-     
-
-
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-       
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Alyshka, née et ayant grandi en France, est une nouvelle étoile montante de la scène musicale psychédélique. Son parcours musical a commencé très tôt, nourri par un profond amour de la musique, qu’elle a rapidement maîtrisée à la batterie et à la flûte traversière dès son plus jeune âge. Après des années passées à explorer les fêtes et les festivals, absorbant diverses énergies et inspirations, Alyshka a lancé son propre projet de psytrance et trouve désormais naturellement sa place dans la scène underground française. Chaque performance raconte une histoire, où la musique groovy se heurte et se mêle à l’énergie et aux vibrations du public, créant une aventure unique sur le dancefloor.
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Découvrez-la également sous son alias : <strong>Jalaya</strong> ! </p>
 
 
-  </main>
+              <p className="text-lg font-quantico leading-relaxed mb-6 mt-16">
+                Alyshka
+              </p>
+              {/* Réseaux sociaux */}
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+                <a
+                  href={artiste.soundcloud}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    src="/soundcloud_logo.png"
+                    alt="SoundCloud"
+                    className="w-16 h-auto hover:opacity-90 transition-opacity"
+                  />
+                </a>
+
+                <Link
+                  href={artiste.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+              <p className="text-lg font-quantico leading-relaxed mb-6 mt-16">
+                Jalaya
+              </p>
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+
+
+                <Link
+                  href='https://www.instagram.com/alice_jalaya?utm_source=ig_web_button_share_sheet&igsh=MTRnajkya20zNzV5cQ=='
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </main>
 
 
 

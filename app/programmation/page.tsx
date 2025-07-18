@@ -28,7 +28,7 @@ const artistes = [
   { id: 19, nom: 'Deklicat', page: 'deklicat', image: '/deklicat.png', style: 'Techno Cinématique', jour: 'vendredi', scene: 'fractale' },
   { id: 20, nom: '6thfloor', page: '6thfloor', image: '/6thfloor.jpg', style: 'Acid Techno', jour: 'vendredi', scene: 'fractale' },
   { id: 21, nom: 'Tilda', page: 'tilda', image: '/tilda.jpg', style: 'Dark Psytech', jour: 'vendredi', scene: 'fractale' },
-  { id: 22, nom: 'Johnny Void', page: 'johnnyvoid', image: '/johnnyvoid.jpg', style: 'Psytechno Indus', jour: 'vendredi', scene: 'fractale' },
+  { id: 22, nom: 'Johnny Void', page: 'zeridium', image: '/johnnyvoid.jpg', style: 'Psytechno Indus', jour: 'vendredi', scene: 'fractale' },
   { id: 23, nom: 'Mimix', page: 'mimix', image: '/mimix.jpg', style: 'Tribal House', icon: 'immersif', jour: 'samedi', scene: 'spirale' },
   { id: 24, nom: 'Alaska', page: 'alaska', image: '/alaska.jpeg', icon: 'locaux', style: 'Bass House', jour: 'samedi', scene: 'spirale' },
   { id: 25, nom: 'Catharso', page: 'catharso', image: '/catharso.jpg', style: 'Bass House', jour: 'samedi', scene: 'spirale' },
@@ -53,7 +53,7 @@ const artistes = [
   { id: 44, nom: 'Alyshka', page: 'alyshka', image: '/alyshka.jpg', style: 'Full on', jour: 'samedi', scene: 'fractale' },
   { id: 45, nom: 'Zeridium', page: 'zeridium', image: '/zeridium.jpg', style: 'Nighty Full on', jour: 'samedi', scene: 'fractale' },
   { id: 46, nom: 'Zeo', page: 'zeo', image: '/zeo.jpg', style: 'Dark Psy', jour: 'samedi', scene: 'fractale' },
-  { id: 47, nom: 'Vent des Forets', page: 'ventdesforets', image: '/ventdesforets.jpg', style: 'Hypnothic Techno', jour: 'samedi', scene: 'fractale' },
+  { id: 47, nom: 'Vent des Forets', page: 'tilda', image: '/ventdesforets.jpg', style: 'Hypnothic Techno', jour: 'samedi', scene: 'fractale' },
   { id: 48, nom: 'Matilda Dona', page: 'matildadona', icon: 'locaux', image: '/matildadona.jpg', style: 'Dub', jour: 'vendredi', scene: 'spirale' }
 ];
 

@@ -79,31 +79,8 @@ export default function Jako() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...    </p>
+Jako est un DJ underground depuis 7 ans et membre co-fondateur d'immersif event. Énormément influencé par les sonorités de free party, il oriente depuis quelques années sa musique vers une techno plus psychédélique et minimaliste, texturée et mentale.    </p>
 
-
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
     </div>
   </div>
 </section>

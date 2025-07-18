@@ -12,7 +12,7 @@ export default function Hugo() {
     nom: "Hugo",
     image: "/hugobrasse.jpeg", // à remplacer
     bio: `
-Collectionneur et sélecteur de vinyle Reggae Digital/Dancehall des années 80's/90's, dans la tradition des sound system old school jamaïcain et anglais, Hugo vous fera découvrir son univers à travers un style (???) 
+Hugo est un collectionneur et sélecteur de vinyle Reggae Digital/Dancehall des années 80's/90's, dans la tradition des sound system old school jamaïcain et anglais. 
 `,
     soundcloud: "https://on.soundcloud.com/Vqls1r0ltSsjEnSPRx",
     instagram: "https://www.instagram.com/brasse_hugo?utm_source=ig_web_button_share_sheet&igsh=aDQybHdmYzNiZHJp",

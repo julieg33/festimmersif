@@ -17,7 +17,7 @@ export default function codei() {
   };
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-<div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
+    <div className="flex flex-col min-h-screen bg-[#1f1818] text-white">
       {/* Début template */}
       {/* Navbar */}
       <nav className="fixed top-0 left-0 w-full p-4 sm:p-5 bg-black bg-opacity-80 z-50 font-orbitron">
@@ -59,47 +59,55 @@ export default function codei() {
         )}
       </nav>
 
-<main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
-  <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
-  <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
-    {/* Photo à gauche */}
-    <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
-      <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
-        <img
-          src={artiste.image}
-          alt={`Photo de ${artiste.nom}`}
-          className="w-full h-full object-cover"
-        />
-      </div>
-    </div>
+      <main className="flex-grow pt-20 sm:pt-24 lg:pt-28">
+        <section className="bg-[#1f1818] text-white py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-12 px-4 sm:px-6 lg:px-8">
+            {/* Photo à gauche */}
+            <div className="w-full lg:w-1/3 flex justify-center lg:justify-start">
+              <div className="w-64 sm:w-80 aspect-square overflow-hidden rounded-xl shadow-md">
+                <img
+                  src={artiste.image}
+                  alt={`Photo de ${artiste.nom}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
 
-    {/* Texte à droite */}
-    <div className="w-full lg:w-2/3 text-center lg:text-left">
-      <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
+            {/* Texte à droite */}
+            <div className="w-full lg:w-2/3 text-center lg:text-left">
+              <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
-         <p className="text-lg font-quantico leading-relaxed mb-6">
-...
-     </p>
-
-
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
-    </div>
-  </div>
-</section>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Inspiré de l’organisation d’événements et de la culture sound system, il commence à toucher au mix à l’âge de 17 ans, il fondera par la suite le collectif @hyperaktif_krew et participera à la création de @immersif.event
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Il trouve son style grâce à de nombreuses prestations entre rave party et différentes soirées techno sur le grand sud-ouest de la France mais également au travers de l’énergie que le mouvement lui a permis de s’exposer au grand public.
+                Grand amateur d’acid tekno et de hard music en tout genre, il affectionne particulièrement produire de puissants sets hybrid en traversant différentes sonorités new rave et hardcore old school n’hésitant pas à faire monter les bpm pour dévoiler sa vraie personnalité.
+              </p>
+              <p className="text-lg font-quantico leading-relaxed mb-6">
+                Il considère que chaque set confectionné reste unique en fonction de l’événement et met en lumières ses inspirations ainsi que son état d’esprit au service de l’expérience auditive du public.
+                Vous l’aurez compris, CØDEÎ est un artiste pour le moins imprévisible qui risque de vous faire voyager à travers sa vision et son explosivité.
+              </p>
 
 
-  </main>
+              {/* Réseaux sociaux */}
+              <div className="flex justify-center lg:justify-start gap-4 mt-6">
+
+                <Link
+                  href={artiste.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-[#6ca671]"
+                >
+                  <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+      </main>
 
 
 

@@ -12,8 +12,8 @@ export default function xl() {
     nom: "5XL",
     image: "/5XL.jpg", // à remplacer
 
-    soundcloud: "",
-    instagram: "",
+    soundcloud: "https://on.soundcloud.com/WNN2jJzr1wSXBbSIej",
+    instagram: "https://www.instagram.com/5xl5xl5xl?utm_source=ig_web_button_share_sheet&igsh=MXJ0OXY2NDV6YXFlbw==",
 
   };
   const [menuOpen, setMenuOpen] = useState(false);
@@ -79,7 +79,13 @@ export default function xl() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...    </p>
+Basé à Bordeaux et issu du monde des fêtes libres, 5XL partage ses pépites undergrounds depuis près de 6 ans, accordant une grande importance à son éclectisme musical dont l’univers varie entre 125 et 190 bpm.
+
+   </p>
+             <p className="text-lg font-quantico leading-relaxed mb-6">
+
+Très influencé par le groove que l’on peut retrouver en free, mais aussi par la scène Hardtrance des années 90’s, Maxime se tourne aujourd’hui vers une Techno multiple, tantôt mentale, tantôt psychée, portée par les artistes du Cult Collective, ou encore par la talentueuse et créative scène italienne.
+    </p>
 
 
       {/* Réseaux sociaux */}

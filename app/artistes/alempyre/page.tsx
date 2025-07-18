@@ -79,7 +79,14 @@ export default function Alempyre() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...    </p>
+Alempyre est un grand passionné de musiques électroniques depuis son plus jeune âge. Il se tourne rapidement vers la culture et le mouvement free party ou il y trouvera ses influences à travers la Techno / Tekno.
+    </p>
+         <p className="text-lg font-quantico leading-relaxed mb-6">
+Présent depuis 4 ans sur les plus grosses scènes Tekno de Bordeaux, il a su captiver des milliers de personnes aux côtés d'artistes internationaux avec des set alliants dynamisme et nouveautés percutantes. 
+  </p>
+         <p className="text-lg font-quantico leading-relaxed mb-6">
+Préparez vous à vivre une aventure musicale inédite pour ce Festimmersif !
+    </p>
 
 
       {/* Réseaux sociaux */}
