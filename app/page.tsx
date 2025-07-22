@@ -97,7 +97,7 @@ export default function Home() {
 
             <div className="flex items-center justify-center mb-4">
               <Sprout className="w-8 h-8 text-[#9ec37b] mr-4" />
-              <h2 className="text-4xl font-bebasNeue text-white">Bienvenue dans une expérience hors du temps</h2>
+              <h2 className="text-4xl font-bebasNeue text-white">Bienvenue chez vous </h2>
               <Sprout className="w-8 h-8 text-[#9ec37b] ml-4" />
             </div>
 
@@ -112,7 +112,7 @@ export default function Home() {
 
             <Link href="/billetterie">
               <p className="text-2xl text-[#9ec37b] py-4 font-bebasNeue leading-relaxed  hover:underline">
-                Rejoignez-nous. Et vivez l’expérience
+                Rejoins nous, prends ton billet !
               </p>
             </Link>
           </div>
@@ -176,7 +176,7 @@ export default function Home() {
 
       <section className="bg-[#1f1818] text-white py-6 px-6">
         <div className="container mx-auto text-center">
-          <h3 className="text-3xl font-bebasNeue mb-8">Bien plus qu’un festival, une aventure immersive !</h3>
+          <h3 className="text-3xl font-bebasNeue mb-8">Hormis la musique, il se passe quoi ?!</h3>
           <p className="text-lg font-quantico mb-8 leading-relaxed">
             Fest’Immersif ne se limite pas à la nuit
           </p>
