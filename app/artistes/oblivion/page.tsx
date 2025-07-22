@@ -79,32 +79,18 @@ export default function Oblivion() {
       <h1 className="text-5xl text-[#9ec37b] font-bebasNeue mb-6">{artiste.nom}</h1>
 
          <p className="text-lg font-quantico leading-relaxed mb-6">
-...
+Issu du monde de la freeparty, Oblivion trace sa route entre sons acides et visuels hallucinés. D’abord bercé par les riffs du rock psychédélique des années 70, il troque sa guitare contre les platines et plonge dans l’hybrid acid. 
+Fortement influencé par l’art visionnaire et psychédélique, il développe une esthétique sensorielle où le son et l’image se répondent.
+
+   </p>
+
+         <p className="text-lg font-quantico leading-relaxed mb-6">
+Membre du collectif Le Chaudron, il embrasse une approche totale du live : passionné de VDJing et créateur d’ambiances visuelles, il signera aussi les mappings de la scène Fractal, où son univers prendra toute son ampleur.
+
    </p>
 
 
-      {/* Réseaux sociaux */}
-      <div className="flex justify-center lg:justify-start gap-4 mt-6">
-        <a
-          href={artiste.soundcloud}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/soundcloud_logo.png"
-            alt="SoundCloud"
-            className="w-16 h-auto hover:opacity-90 transition-opacity"
-          />
-        </a>
-        <Link
-          href={artiste.instagram}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-[#6ca671]"
-        >
-          <Instagram className="w-12 h-12 hover:opacity-90 transition-opacity" />
-        </Link>
-      </div>
+
     </div>
   </div>
 </section>

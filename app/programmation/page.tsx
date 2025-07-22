@@ -9,7 +9,6 @@ import { Instagram, Facebook, LocateFixed, Menu, X, Info } from "lucide-react";
 const artistes = [
   { id: 1, nom: 'Hugo', page: 'hugo', image: '/hugobrasse.jpeg', style: 'Selecta Roots', icon: 'locaux', jour: 'vendredi', scene: 'spirale' },
   { id: 2, nom: 'Charly Uzly & Django Elyjah Campbell', page: 'charlyuzlydjangoelyjahcampbell', image: '/charlyuzly&djangoelyjahcampbell.jpeg', style: 'UK Dub', icon: 'locaux', jour: 'vendredi', scene: 'spirale' },
-  { id: 3, nom: 'Critikal sub & Thomas Anton', page: 'critikalsubthomasanton', image: '/critikalsubthomasanton.jpg', style: 'Dub', icon: 'locaux', jour: 'vendredi', scene: 'spirale' },
   { id: 4, nom: 'Roots Zombie', page: 'rootszombie', image: '/rootszombie.jpg', style: 'Dub to electro D', icon: 'locaux', jour: 'vendredi', scene: 'spirale' },
   { id: 5, nom: 'Piou', page: 'piou', image: '/piou.JPG', style: 'Mental Dub', jour: 'vendredi', scene: 'spirale' },
   { id: 6, nom: 'Totemïk Anïgua', page: 'totemikanigua', image: '/totemikanigua.jpg', style: 'Mental Tekno', jour: 'vendredi', scene: 'spirale' },
