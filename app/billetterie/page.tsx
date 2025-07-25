@@ -170,6 +170,7 @@ export default function Home() {
             <Link href="/mentions-legales" className="text-xs text-center sm:text-sm font-quantico text-[#9ec37b] hover:text-[#bfeb96]">
               Mentions légales & politique de confidentialité
             </Link>
+            <p className="text-xs sm:text-sm text-center font-quantico text-[#9ec37b]">Crédits photos : Nicolas Nourrit visuals - Lauguinandie</p>
           </div>
 
           <Link href="https://www.instagram.com/immersif.event/" target="_blank" rel="noopener noreferrer" className="text-[#9ec37b] hover:text-[#bfeb96]">

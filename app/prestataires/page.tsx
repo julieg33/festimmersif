@@ -101,6 +101,7 @@ export default function Prestataires() {
       <Link href="/mentions-legales" className="text-xs text-center sm:text-sm font-quantico text-[#6ca671] hover:text-green-700">
         Mentions légales & politique de confidentialité
       </Link>
+      <p className="text-xs sm:text-sm text-center font-quantico text-[#9ec37b]">Crédits photos : Nicolas Nourrit visuals - Lauguinandie</p>
     </div>
 
     <Link href="https://www.instagram.com/immersif.event/" target="_blank" rel="noopener noreferrer" className="text-[#6ca671] hover:text-green-700">
