@@ -7,32 +7,32 @@ import { motion } from 'framer-motion';
 import { Instagram, Facebook, X, Menu } from "lucide-react";
 
 const images1 = [
-  '/d-e-1.1.jpg',
-  '/d-e-1.2.jpg',
-  '/d-e-1.3.jpg',
-  '/d-e-1.4.jpg',
-  '/d-e-1.5.jpg',
-  '/d-e-1.6.jpg',
-  '/d-e-1.7.jpg',
-  '/d-e-1.8.jpg',
-  '/d-e-1.9.jpg',
-  '/d-e-1.10.jpg',
-  '/d-e-1.11.jpg',
-  '/d-e-1.12.jpg',
-  '/d-e-1.13.jpg',
-  '/d-e-1.14.jpg',
-  '/d-e-1.15.jpg',
-  '/d-e-1.16.jpg'
+  '/d-e-1.1.webp',
+  '/d-e-1.2.webp',
+  '/d-e-1.3.webp',
+  '/d-e-1.4.webp',
+  '/d-e-1.5.webp',
+  '/d-e-1.6.webp',
+  '/d-e-1.7.webp',
+  '/d-e-1.8.webp',
+  '/d-e-1.9.webp',
+  '/d-e-1.10.webp',
+  '/d-e-1.11.webp',
+  '/d-e-1.12.webp',
+  '/d-e-1.13.webp',
+  '/d-e-1.14.webp',
+  '/d-e-1.15.webp',
+  '/d-e-1.16.webp'
 ];
 
 const images0 = [
-  '/d-e-0.1.jpg',
-  '/d-e-0.2.jpg',
-  '/d-e-0.3.jpg',
-  '/d-e-0.4.jpg',
-  '/d-e-0.5.jpg',
-  '/d-e-0.6.jpg',
-  '/d-e-0.7.jpg'
+  '/d-e-0.1.webp',
+  '/d-e-0.2.webp',
+  '/d-e-0.3.webp',
+  '/d-e-0.4.webp',
+  '/d-e-0.5.webp',
+  '/d-e-0.6.webp',
+  '/d-e-0.7.webp'
 ];
 
 export default function Home() {
